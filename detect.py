@@ -161,11 +161,11 @@ def main():
     # default_model = '2019_05_13_whole(1)/output_tflite_graph_1557776948_edgetpu.tflite'
     # default_model = '2/output_tflite_graph_edgetpu.tflite'
     # default_model = '3/output_tflite_graph_edgetpu.tflite'
-    default_model = 'yolov5_edgetpu.tflite'
+    #default_model = 'yolov5_edgetpu.tflite'
     # more to come...
-    default_labels = 'car_labels.txt'
-    #default_model = 'mobilenet_ssd_v2_face_quant_postprocess_edgetpu.tflite'
-    #default_labels = 'face_labels.txt'
+    #default_labels = 'car_labels.txt'
+    default_model = 'mobilenet_ssd_v2_face_quant_postprocess_edgetpu.tflite'
+    default_labels = 'face_labels.txt'
     parser = argparse.ArgumentParser()
     parser.add_argument('-d', action="store_true", help='enable debug mode')
     parser.add_argument('--model', help='.tflite model path',
