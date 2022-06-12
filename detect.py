@@ -45,7 +45,7 @@ ENEMY_COLOR = None
 
 # LED = GPIO(12, GPIO.OUT)
 
-PORT = ["../../dev/video1", "../../dev/video0"]
+PORT = ["~/dev/video1", "~/dev/video0"]
 DEBUG = False
 LOG_PATH = '~/OSU_RM_tpu/log/{date}'
 
