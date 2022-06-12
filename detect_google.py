@@ -35,7 +35,7 @@ import gstreamer
 import os
 import time
 
-from common import avg_fps_counter, SVG
+from common import SVG
 from pycoral.adapters.common import input_size
 from pycoral.adapters.detect import get_objects
 from pycoral.utils.dataset import read_label_file
@@ -94,7 +94,7 @@ def main():
     inference_size = input_size(interpreter)
 
     # Average fps over last 30 frames.
-    fps_counter = avg_fps_counter(30)
+    #fps_counter = avg_fps_counter(30)
 
     def user_callback(input_tensor, src_size, inference_box):
       nonlocal fps_counter
@@ -104,8 +104,8 @@ def main():
       objs = get_objects(interpreter, args.threshold)[:args.top_k]
       end_time = time.monotonic()
       text_lines = [
-          'Inference: {:.2f} ms'.format((end_time - start_time) * 1000),
-          'FPS: {} fps'.format(round(next(fps_counter))),
+          'Inference: {:.2f} ms'.format((end_time - start_time) * 1000)
+          #'FPS: {} fps'.format(round(next(fps_counter))),
       ]
       print(' '.join(text_lines))
       return generate_svg(src_size, inference_box, objs, labels, text_lines)
