@@ -23,7 +23,7 @@ import os
 from edgetpu.detection.engine import DetectionEngine
 import gstreamer
 import math
-from can.interface import slcan
+from can.interfaces import slcan
 from can import Message
 
 YAW_MID = 900
