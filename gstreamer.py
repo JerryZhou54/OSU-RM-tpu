@@ -91,9 +91,8 @@ def detectCoralDevBoard():
 
 def run_pipeline(debug, user_function,
                  src_size=(X_PIXEL, Y_PIXEL),
-                 videosrc = '/dev/video0',
                  appsink_size=(300,300)):
-    PIPELINE = 'v4l2src device={videosrc} ! {src_caps} ! {leaky_q} '
+    PIPELINE = 'v4l2src device=/dev/video0 ! {src_caps} ! {leaky_q} '
     if debug:
         if detectCoralDevBoard():
             SRC_CAPS = 'video/x-raw,format=YUY2,width={width},height={height},framerate={frame_rate}/1'
@@ -189,4 +188,4 @@ def run_pipeline(debug, user_function,
         print("CANBUS ttyACMO Closed")
     """
     print("Closing CANBUS on ttyACM0...")
-    port = slcan.slcanBus("{videosrc}", bitrate=1000000)
+    port = slcan.slcanBus("/dev/video0", bitrate=1000000)
