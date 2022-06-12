@@ -20,7 +20,7 @@ import re
 import svgwrite
 import imp
 import os
-from detection.engine import DetectionEngine
+from pycoral.utils.edgetpu.detection.engine import DetectionEngine
 import gstreamer
 import math
 from can.interfaces import slcan
