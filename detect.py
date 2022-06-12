@@ -191,13 +191,13 @@ def main():
     last_time = time.monotonic()
 
     try:
-        dev = slcan.slcanBus(PORT[0], bitrate=1000000)
-        dev.open()
-        print('Connection found at port', PORT[0])
-    except:
         dev = slcan.slcanBus(PORT[1], bitrate=1000000)
         dev.open()
         print('Connection found at port', PORT[1])
+    except:
+        dev = slcan.slcanBus(PORT[0], bitrate=1000000)
+        dev.open()
+        print('Connection found at port', PORT[0])
     finally:
         dev = None
         print('No connection found but still running')
