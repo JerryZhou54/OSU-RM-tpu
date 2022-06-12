@@ -1,0 +1,5 @@
+0 armor
+1 base
+2 car
+3 ignore
+4 watcher
