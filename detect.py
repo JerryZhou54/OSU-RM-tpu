@@ -45,7 +45,7 @@ ENEMY_COLOR = None
 
 # LED = GPIO(12, GPIO.OUT)
 
-PORT = ["~/dev/video1", "~/dev/video0"]
+PORT = ["/dev/video0", "/dev/video1"]
 DEBUG = False
 LOG_PATH = '~/OSU_RM_tpu/log/{date}'
 
@@ -191,17 +191,19 @@ def main():
     last_time = time.monotonic()
 
     try:
-        dev = slcan.slcanBus(PORT[1], bitrate=1000000)
-        dev.open()
-        print('Connection found at port', PORT[1])
-    except:
         dev = slcan.slcanBus(PORT[0], bitrate=1000000)
         dev.open()
         print('Connection found at port', PORT[0])
+    """
+    except:
+        dev = slcan.slcanBus(PORT[1], bitrate=1000000)
+        dev.open()
+        print('Connection found at port', PORT[1])
     finally:
         dev = None
         print('No connection found but still running')
         pass
+    """
 
     yaw = YAW_MID
     pitch = PITCH_MID
