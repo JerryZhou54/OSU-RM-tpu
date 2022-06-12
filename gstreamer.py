@@ -188,4 +188,4 @@ def run_pipeline(debug, user_function,
         print("CANBUS ttyACMO Closed")
     """
     print("Closing CANBUS on ttyACM0...")
-    port = slcan.slcanBus("/dev/video1", bitrate=1000000)
+    port = slcan.slcanBus("/dev/video0", bitrate=1000000)
