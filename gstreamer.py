@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from can.interface import slcan
+from can.interfaces import slcan
 import gi
 gi.require_version('Gst', '1.0')
 gi.require_version('GstBase', '1.0')
