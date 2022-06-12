@@ -20,7 +20,7 @@ import re
 import svgwrite
 import imp
 import os
-from edgetpu.detection.engine import DetectionEngine
+from detection.engine import DetectionEngine
 import gstreamer
 import math
 from can.interfaces import slcan
@@ -161,9 +161,9 @@ def main():
     # default_model = '2019_05_13_whole(1)/output_tflite_graph_1557776948_edgetpu.tflite'
     # default_model = '2/output_tflite_graph_edgetpu.tflite'
     # default_model = '3/output_tflite_graph_edgetpu.tflite'
-    default_model = '4/output_tflite_graph_edgetpu.tflite'
+    default_model = 'best-fp16_edgetpu.tflite'
     # more to come...
-    default_labels = 'armor_plate_labels.txt'
+    default_labels = 'car_labels.txt'
     # default_model = 'mobilenet_ssd_v2_face_quant_postprocess_edgetpu.tflite'
     # default_labels = 'face_labels.txt'
     parser = argparse.ArgumentParser()
