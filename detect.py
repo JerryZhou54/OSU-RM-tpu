@@ -20,7 +20,7 @@ import re
 import svgwrite
 import importlib
 import os
-from edgetpu.basic.basic_engine.BasicEngine import BasicEngine
+from edgetpu.basic.basic_engine import BasicEngine
 import gstreamer
 import math
 from can.interfaces import slcan
