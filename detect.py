@@ -18,12 +18,12 @@ import time
 import datetime
 import re
 import svgwrite
-import imp
+import importlib
 import os
 from edgetpu.detection.engine import DetectionEngine
 import gstreamer
 import math
-from can.interfaces import slcan
+from can.interface import slcan
 from can import Message
 
 YAW_MID = 900
