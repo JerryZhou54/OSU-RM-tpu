@@ -20,7 +20,7 @@ import re
 import svgwrite
 import importlib
 import os
-from edgetpu.basic.basic_engine import BasicEngine
+from edgetpu.detection.engine import DetectionEngine
 import gstreamer
 import math
 from can.interfaces import slcan
@@ -185,7 +185,7 @@ def main():
         print("Debug mode is on!")
     print("Loading model:", default_model)
     print("Loading labels:", default_labels)
-    engine = BasicEngine(args.model)
+    engine = DetectionEngine(args.model)
     labels = load_labels(args.labels)
 
     last_time = time.monotonic()
