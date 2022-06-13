@@ -20,7 +20,7 @@ import re
 import svgwrite
 import importlib
 import os
-from detection.engine import DetectionEngine
+from edgetpu.detection.engine import DetectionEngine
 import gstreamer
 import math
 from can.interfaces import slcan
