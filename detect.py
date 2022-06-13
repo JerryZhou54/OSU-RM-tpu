@@ -20,6 +20,7 @@ import re
 import svgwrite
 import importlib
 import os
+import edgetpu
 from edgetpu.detection.engine import DetectionEngine
 import gstreamer
 import math
