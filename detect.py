@@ -195,23 +195,22 @@ def main():
         dev.open()
         print('Connection found at port', PORT[0])
     except:
+        dev = slcan.slcanBus(PORT[1], bitrate=1000000)
+        dev.open()
+        print('Connection found at port', PORT[1])
+    finally:
+        dev = None
+        print('No connection found but still running')
         pass
-    #except:
-    #    dev = slcan.slcanBus(PORT[1], bitrate=1000000)
-    #    dev.open()
-    #    print('Connection found at port', PORT[1])
-    #finally:
-    #    dev = None
-    #    print('No connection found but still running')
-    #    pass
 
     yaw = YAW_MID
     pitch = PITCH_MID
 
     def user_callback(image, svg_canvas):
         nonlocal last_time
+        nonlocal dev
         start_time = time.monotonic()
-        objs = engine.DetectWithImage(image, threshold=args.threshold,
+        objs = engine.detect_with_image(image, threshold=args.threshold,
                                       keep_aspect_ratio=True, relative_coord=True,
                                       top_k=args.top_k)
         end_time = time.monotonic()
