@@ -219,10 +219,10 @@ def main():
 
         obj = choose_obj(objs, start_time)
         if obj:
-            # if labels:
-            #     print(labels[obj.label_id], 'score = ', obj.score)
-            # else:
-            #     print('score = ', obj.score)
+            if labels:
+                print(labels[obj.label_id], 'score = ', obj.score)
+            else:
+                print('score = ', obj.score)
             [x1, y1, x2, y2] = obj.bounding_box.flatten().tolist()
             # calculate pixel coords
             pix_x = (x1 + x2) * X_PIXEL/2  # 640/2 = 320
