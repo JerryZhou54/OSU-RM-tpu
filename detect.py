@@ -189,7 +189,8 @@ def main():
     labels = load_labels(args.labels)
 
     last_time = time.monotonic()
-
+    
+    """
     try:
         dev = slcan.slcanBus(PORT[0], bitrate=1000000)
         dev.open()
@@ -202,13 +203,14 @@ def main():
         dev = None
         print('No connection found but still running')
         pass
+    """
 
     yaw = YAW_MID
     pitch = PITCH_MID
 
     def user_callback(image, svg_canvas):
         nonlocal last_time
-        nonlocal dev
+        #nonlocal dev
         start_time = time.monotonic()
         objs = engine.detect_with_image(image, threshold=args.threshold,
                                       keep_aspect_ratio=True, relative_coord=True,
@@ -230,10 +232,10 @@ def main():
                 1800 / math.pi + YAW_MID
             pitch = math.atan((pix_y - Y_PIXEL/2) / CAMERA_PARAM) * \
                 1800 / math.pi + PITCH_MID
-            sendMessage(dev, yaw, pitch)
+            #sendMessage(dev, yaw, pitch)
         else:
             print('No object detected!')
-            sendMessage(dev, DEFAULT_YAW, DEFAULT_PITCH)
+            #sendMessage(dev, DEFAULT_YAW, DEFAULT_PITCH)
 
         text_lines = [
             'Inference: %.2f ms' % ((end_time - start_time) * 1000),
